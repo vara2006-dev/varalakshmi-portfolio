@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome | Varalakshmi Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        /* ==============================
+           RESET
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+
+        /* ==============================
+           BODY
+        ============================== */
+
+        body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(59, 130, 246, 0.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(139, 92, 246, 0.45),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 75% 85%,
+            rgba(6, 182, 212, 0.40),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(37, 99, 235, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #0F172A 45%,
+            #172554
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+        /* ==============================
+           BACKGROUND GLOW
+        ============================== */
+
+        body::before {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            background: rgba(96, 165, 250, 0.25);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            top: -100px;
+            left: -100px;
+        }
+
+
+        body::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background: rgba(37, 99, 235, 0.25);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            bottom: -100px;
+            right: -80px;
+        }
+        .gradient-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0.55;
+    animation: float 3s ease-in-out infinite;
+}
+
+.shape-one {
+    width: 180px;
+    height: 180px;
+    background: #3B82F6;
+    top: 8%;
+    left: 10%;
+}
+
+.shape-two {
+    width: 220px;
+    height: 220px;
+    background: #04b8d8;
+    bottom: 8%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.shape-three {
+    width: 140px;
+    height: 140px;
+    background: #06B6D4;
+    top: 55%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(25px, -25px);
+    }
+}
+
+
+        /* ==============================
+           CARD
+        ============================== */
+
+        .card{
+    width:100%;
+    max-width:620px;
+
+    padding:50px 45px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        145deg,
+        rgba(15,23,42,0.92),
+        rgba(52, 3, 230, 0.88),
+        rgba(37,99,235,0.82)
+    );
+
+    border:1px solid rgba(147,197,253,0.25);
+
+    border-radius:24px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.40),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+
+    position:relative;
+    z-index:2;
+
+    animation:cardAppear 0.8s ease;
+}
+
+        /* ==============================
+           CARD ANIMATION
+        ============================== */
+
+        @keyframes cardAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+
+        /* ==============================
+           BADGE
+        ============================== */
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 7px 16px;
+
+            margin-bottom: 25px;
+
+            border-radius: 30px;
+
+            background: rgba(219, 234, 254, 0.15);
+
+            border: 1px solid rgba(191, 219, 254, 0.4);
+
+            color: #BFDBFE;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        /* ==============================
+           ICON
+        ============================== */
+
+        .icon{
+    width:75px;
+    height:75px;
+
+    margin:0 auto 22px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:20px;
+
+    background:rgba(96,165,250,0.15);
+
+    border:1px solid rgba(147,197,253,0.25);
+
+    color:#BFDBFE;
+
+    font-size:34px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.20);
+}
+
+
+        /* ==============================
+           HEADINGS
+        ============================== */
+
+        h1 {
+
+            color: #FFFFFF;
+
+            font-size: 42px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+        }
+
+
+        h2 {
+
+            color: #BFDBFE;
+
+            font-size: 22px;
+
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ==============================
+           DESCRIPTION
+        ============================== */
+
+        .intro {
+
+            color: #E2E8F0;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            max-width: 500px;
+
+            margin: auto;
+        }
+
+
+        .intro strong {
+
+            color: #FFFFFF;
+
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           DEVELOPER ROLE
+        ============================== */
+
+        .role {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            color: #93C5FD;
+
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           BUTTON AREA
+        ============================== */
+
+        .buttons {
+
+            margin-top: 32px;
+        }
+
+
+        /* ==============================
+           EXPLORE BUTTON
+        ============================== */
+
+        .explore-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 30px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: #FFFFFF;
+
+            color: #1E3A8A;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.2);
+
+            transition: all 0.3s ease;
+        }
+
+
+        .explore-btn:hover {
+
+            transform: translateY(-3px);
+
+            background: #EFF6FF;
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .explore-btn i {
+
+            transition: transform 0.3s ease;
+        }
+
+
+        .explore-btn:hover i {
+
+            transform: translateX(5px);
+        }
+
+
+        /* ==============================
+           SMALL FOOTER TEXT
+        ============================== */
+
+        .footer-text {
+
+            margin-top: 25px;
+
+            color: #CBD5E1;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+        }
+
+
+       /* ==============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        min-height: 100vh;
+        padding: 12px;
+        overflow: hidden;
+    }
+
+    /* Background shapes smaller */
+    .shape-one {
+        width: 110px;
+        height: 110px;
+        top: 5%;
+        left: -20px;
+    }
+
+    .shape-two {
+        width: 130px;
+        height: 130px;
+        bottom: 5%;
+        right: -25px;
+    }
+
+    .shape-three {
+        width: 90px;
+        height: 90px;
+        left: -25px;
+    }
+
+    /* MOBILE CARD */
+    .card {
+        width: 100%;
+        max-width: 360px;
+
+        padding: 28px 20px;
+
+        border-radius: 18px;
+    }
+
+    /* Badge */
+    .badge {
+        padding: 6px 13px;
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    /* Icon */
+    .icon {
+        width: 58px;
+        height: 58px;
+
+        margin: 0 auto 16px;
+
+        border-radius: 15px;
+
+        font-size: 25px;
+    }
+
+    /* Heading */
+    h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 17px;
+        margin-bottom: 14px;
+    }
+
+    /* Description */
+    .intro {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .role {
+        margin-top: 7px;
+        font-size: 13px;
+    }
+
+    /* Button */
+    .buttons {
+        margin-top: 22px;
+    }
+
+    .explore-btn {
+        width: 100%;
+        max-width: 250px;
+
+        padding: 12px 18px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+    }
+
+    /* Footer */
+    .footer-text {
+        margin-top: 18px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+}
+
+
+/* ==============================
+   VERY SMALL MOBILE
+================================ */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 330px;
+        padding: 24px 17px;
+        border-radius: 16px;
+    }
+
+    .badge {
+        font-size: 9px;
+        margin-bottom: 15px;
+    }
+
+    .icon {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+        margin-bottom: 13px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .intro {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .role {
+        font-size: 12px;
+    }
+
+    .explore-btn {
+        max-width: 230px;
+        padding: 11px 15px;
+        font-size: 13px;
+    }
+
+    .footer-text {
+        font-size: 10px;
+        margin-top: 15px;
+    }
+}
+
+    </style>
+</head>
+
+
+<body>
+    <div class="gradient-shape shape-one"></div>
+<div class="gradient-shape shape-two"></div>
+<div class="gradient-shape shape-three"></div>
+
+
+
+    <!-- ==============================
+         WELCOME CARD
+    ============================== -->
+
+    <div class="card">
+
+
+        <!-- Portfolio Badge -->
+
+        <div class="badge">
+            PORTFOLIO 2026
+        </div>
+
+
+        <!-- Developer Icon -->
+
+        <div class="icon">
+
+            <i class="fas fa-laptop-code"></i>
+
+        </div>
+
+
+        <!-- Welcome Heading -->
+
+        <h1>
+            Welcome!
+        </h1>
+
+
+        <!-- Name -->
+
+        <h2>
+            I'm Varalakshmi K
+        </h2>
+
+
+        <!-- Introduction -->
+
+        <p class="intro">
+
+            Thank you for taking the time to visit my portfolio.
+
+            <br>
+
+            <span class="role">
+                B.Sc. Computer Science Graduate
+            </span>
+
+            <br>
+
+            <strong>
+                Aspiring Full Stack Web Developer
+            </strong>
+
+        </p>
+
+
+        <!-- Button -->
+
+        <div class="buttons">
+
+            <button
+                class="explore-btn"
+                onclick="openPortfolio()">
+
+                Explore Portfolio
+
+                <i class="fas fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <p class="footer-text">
+
+            Explore my skills, projects, and professional journey.
+
+        </p>
+
+
+    </div>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        function openPortfolio() {
+
+            window.location.href = "index.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+

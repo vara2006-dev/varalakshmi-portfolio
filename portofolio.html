@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,23 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+        content="Varalakshmi K - Full Stack Developer Portfolio. Explore my skills, projects, education and contact information.">
+
+    <meta name="author" content="Varalakshmi K">
+
     <title>Varalakshmi K | Full Stack Developer</title>
 
-    <meta name="description"
-        content="Portfolio of Varalakshmi K, B.Sc. Computer Science Graduate and aspiring Full Stack Developer.">
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
     <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
@@ -29,707 +23,667 @@
 
 <body>
 
-    <!-- ================= BACKGROUND GRAPHICS ================= -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header class="navbar">
 
-    <div class="bg-shape shape-one" aria-hidden="true"></div>
-    <div class="bg-shape shape-two" aria-hidden="true"></div>
-    <div class="bg-shape shape-three" aria-hidden="true"></div>
+        <div class="nav-container">
 
-
-    <!-- ================= NAVBAR ================= -->
-
-    <header>
-        <nav class="navbar" aria-label="Main Navigation">
-
-            <a href="#home" class="logo" aria-label="Varalakshmi Home">
-                Varalakshmi<span>.</span>
+            <a href="#home" class="logo">
+                Varalakshmi<span>K</span>
             </a>
 
-            <button
-                type="button"
-                class="menu-toggle"
-                aria-label="Open Menu"
-                aria-expanded="false"
-                aria-controls="navLinks">
-
-                <i class="fas fa-bars" aria-hidden="true"></i>
-
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                <i class="fas fa-bars"></i>
             </button>
 
-            <ul class="nav-links" id="navLinks">
+            <nav class="nav-links" id="navLinks">
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
+                <a href="#home" class="active">
+                    Home
+                </a>
 
-                <li>
-                    <a href="#about">About</a>
-                </li>
+                <a href="#about">
+                    About
+                </a>
 
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
+                <a href="#skills">
+                    Skills
+                </a>
 
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
+                <a href="#projects">
+                    Projects
+                </a>
 
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
+                <a href="#education">
+                    Education
+                </a>
 
-            </ul>
+                <a href="#contact">
+                    Contact
+                </a>
 
-        </nav>
+            </nav>
+
+        </div>
+
     </header>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
-
+    <!-- =========================
+         HOME / HERO
+    ========================== -->
     <main>
-
-        <!-- ================= HERO ================= -->
 
         <section id="home" class="hero">
 
-            <div class="hero-content">
+            <div class="hero-container">
 
-                <p class="hello-text">
-                    <i class="fas fa-hand-sparkles" aria-hidden="true"></i>
-                    Hello, I'm
-                </p>
+                <div class="hero-content">
 
-                <h1>
-                    Varalakshmi K
-                </h1>
-
-                <h2>
-                    <span id="typing"></span>
-                    <span class="cursor" aria-hidden="true">|</span>
-                </h2>
-
-                <p class="hero-description">
-                    A passionate Computer Science graduate interested in
-                    creating responsive websites, modern web applications,
-                    and practical digital solutions.
-                </p>
-
-
-                <!-- Hero Buttons -->
-
-                <div class="hero-buttons">
-
-                    <a href="#contact" class="primary-btn">
-                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                        Hire Me
-                    </a>
-
-                    <a href="#projects" class="secondary-btn">
-                        <i class="fas fa-code" aria-hidden="true"></i>
-                        View Projects
-                    </a>
-
-                </div>
-
-
-                <!-- Social Links -->
-
-                <div class="hero-social">
-
-                    <a
-                        href="https://www.linkedin.com/in/vara24/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn">
-
-                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-
-                    </a>
-
-                    <a
-                        href="https://github.com/vara2006-dev"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub">
-
-                        <i class="fab fa-github" aria-hidden="true"></i>
-
-                    </a>
-
-                    <a
-                        href="https://www.instagram.com/_codes.creation_/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram">
-
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-
-                    </a>
-
-                    <a
-                        href="mailto:vara24000@gmail.com"
-                        aria-label="Send email">
-
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Hero Profile -->
-
-            <div class="hero-profile">
-
-                <div class="profile-glow" aria-hidden="true"></div>
-
-                <div class="profile-circle">
-
-                    <img
-                        src="img/hp.png"
-                        alt="Varalakshmi K profile photo"
-                        loading="eager">
-
-                </div>
-
-                <div class="profile-badge">
-
-                    <i class="fas fa-code" aria-hidden="true"></i>
-
-                    <span>
-                        Web Developer
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ABOUT ================= -->
-
-        <section id="about" class="section hidden">
-
-            <div class="section-heading">
-
-                <p>
-                    GET TO KNOW ME
-                </p>
-
-                <h2>
-                    About Me
-                </h2>
-
-            </div>
-
-
-            <div class="about-container">
-
-                <!-- About Image -->
-
-                <div class="about-image">
-
-                    <div class="about-image-border">
-
-                        <img
-                            src="img/profile.jpg"
-                            alt="Varalakshmi K"
-                            loading="lazy">
-
-                    </div>
-
-                </div>
-
-
-                <!-- About Content -->
-
-                <div class="about-content">
-
-                    <h3>
-                        Building ideas into
-                        <span>digital experiences.</span>
-                    </h3>
-
-                    <p>
-                        I am <strong>Varalakshmi K</strong>, a B.Sc.
-                        Computer Science graduate with a strong interest
-                        in Full Stack Web Development.
+                    <p class="hero-small-text">
+                        Hello, I'm
                     </p>
 
-                    <p>
-                        I enjoy designing responsive, user-friendly
-                        websites and developing modern web applications.
-                        I am continuously learning new technologies and
-                        looking for opportunities to start my career in
-                        the IT industry.
-                    </p>
-
-
-                    <!-- About Details -->
-
-                    <div class="about-details">
-
-                        <div>
-                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-
-                            <span>
-                                B.Sc. Computer Science
-                            </span>
-                        </div>
-
-                        <div>
-                            <i class="fas fa-location-dot" aria-hidden="true"></i>
-
-                            <span>
-                                Tamil Nadu, India
-                            </span>
-                        </div>
-
-                        <div>
-                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
-
-                            <span>
-                                Web Development
-                            </span>
-                        </div>
-
-                        <div>
-                            <i class="fas fa-briefcase" aria-hidden="true"></i>
-
-                            <span>
-                                Open to Opportunities
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Resume -->
-
-                   <a href="Resume.pdf" download class="resume-btn">
-    <i class="fas fa-download"></i>
-    Download Resume
-</a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SKILLS ================= -->
-
-        <section id="skills" class="section hidden">
-
-            <div class="section-heading">
-
-                <p>
-                    MY TECHNOLOGIES
-                </p>
-
-                <h2>
-                    Skills
-                </h2>
-
-            </div>
-
-
-            <div class="skills-container">
-
-                <!-- HTML -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon html">
-                        <i class="fab fa-html5" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>HTML</h3>
-
-                    <p>
-                        Semantic and structured web pages.
-                    </p>
-
-                </div>
-
-
-                <!-- CSS -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon css">
-                        <i class="fab fa-css3-alt" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>CSS</h3>
-
-                    <p>
-                        Responsive layouts and modern UI design.
-                    </p>
-
-                </div>
-
-
-                <!-- JavaScript -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon javascript">
-                        <i class="fab fa-js" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>JavaScript</h3>
-
-                    <p>
-                        Interactive and dynamic web experiences.
-                    </p>
-
-                </div>
-
-
-                <!-- Python -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon python">
-                        <i class="fab fa-python" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>Python</h3>
-
-                    <p>
-                        Programming and problem-solving.
-                    </p>
-
-                </div>
-
-
-                <!-- PHP -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon php">
-                        <i class="fab fa-php" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>PHP</h3>
-
-                    <p>
-                        Server-side web development.
-                    </p>
-
-                </div>
-
-
-                <!-- MySQL -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon mysql">
-                        <i class="fas fa-database" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>MySQL</h3>
-
-                    <p>
-                        Database management and queries.
-                    </p>
-
-                </div>
-
-
-                <!-- GitHub -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon github">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>GitHub</h3>
-
-                    <p>
-                        Version control and project management.
-                    </p>
-
-                </div>
-
-
-                <!-- Responsive Design -->
-
-                <div class="skill-card">
-
-                    <div class="skill-icon responsive">
-                        <i class="fas fa-mobile-screen" aria-hidden="true"></i>
-                    </div>
-
-                    <h3>Responsive Design</h3>
-
-                    <p>
-                        Mobile-friendly website development.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= PROJECTS ================= -->
-
-        <section id="projects" class="section hidden">
-
-            <div class="section-heading">
-
-                <p>
-                    MY WORK
-                </p>
-
-                <h2>
-                    Projects
-                </h2>
-
-            </div>
-
-
-            <div class="projects-container">
-
-                <!-- ================= PROJECT 01 ================= -->
-
-                <article class="project-card">
-
-                    <div class="project-image">
-
-                        <img
-                            src="img/project1.png"
-                            alt="Departmental Management System"
-                            loading="lazy">
-
-                        <div
-                            class="project-overlay"
-                            aria-hidden="true">
-
-                            <i class="fas fa-building"></i>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <span class="project-number">
-                            PROJECT 01
+                    <h1>
+                        Varalakshmi K
+                    </h1>
+
+                    <h2>
+                        <span id="typing">
+                            Full Stack Developer
                         </span>
+                    </h2>
 
-                        <h3>
-                            Departmental Management System
-                        </h3>
+                    <p class="hero-description">
+                        A passionate Computer Science graduate who enjoys
+                        creating modern, responsive and user-friendly web
+                        applications using frontend and backend technologies.
+                    </p>
 
-                        <p>
-                            A full-stack department management system
-                            developed to manage student records,
-                            staff details, attendance, reports and
-                            department information efficiently.
-                        </p>
+                    <div class="hero-buttons">
 
+                        <a href="#projects" class="btn primary-btn">
+                            <i class="fas fa-code"></i>
+                            View Projects
+                        </a>
 
-                        <div class="project-tags">
-
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
-
-                        </div>
+                        <a href="#contact" class="btn secondary-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Contact Me
+                        </a>
 
                     </div>
 
-                </article>
+                    <div class="social-links">
+
+                        <a href="https://github.com/vara2006-dev"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
 
 
-                <!-- ================= PROJECT 02 ================= -->
+                <div class="hero-image">
 
-                <article class="project-card">
+                    <div class="profile-card">
 
-                    <div class="project-image">
-
-                        <img
-                            src="img/PROJECT3.png"
-                            alt="Personal Portfolio Website"
-                            loading="lazy">
-
-                        <div
-                            class="project-overlay"
-                            aria-hidden="true">
-
+                        <div class="profile-icon">
                             <i class="fas fa-laptop-code"></i>
-
                         </div>
 
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <span class="project-number">
-                            PROJECT 02
-                        </span>
-
                         <h3>
-                            Personal Portfolio Website
+                            Full Stack
                         </h3>
 
                         <p>
-                            A modern responsive portfolio website
-                            developed to showcase my technical skills,
-                            projects, resume and professional profile
-                            through an interactive and user-friendly
-                            interface.
+                            Developer
                         </p>
-
-
-                        <div class="project-tags">
-
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Responsive Design</span>
-
-                        </div>
 
                     </div>
 
-                </article>
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ================= CONTACT ================= -->
+        <!-- =========================
+             ABOUT
+        ========================== -->
+        <section id="about" class="about-section">
 
-        <section id="contact" class="section hidden">
+            <div class="container">
 
-            <div class="section-heading">
-
-                <p>
-                    LET'S CONNECT
-                </p>
-
-                <h2>
-                    Contact Me
-                </h2>
-
-            </div>
-
-
-            <div class="contact-container">
-
-                <!-- Contact Information -->
-
-                <div class="contact-info">
-
-                    <h3>
-                        Let's work together.
-                    </h3>
+                <div class="section-heading">
 
                     <p>
-                        I am currently looking for opportunities
-                        where I can use my skills, learn from
-                        experienced professionals and contribute
-                        to meaningful projects.
+                        Get To Know Me
                     </p>
 
+                    <h2>
+                        About <span>Me</span>
+                    </h2>
 
-                    <div class="contact-details">
+                </div>
 
-                        <!-- Email -->
 
-                        <div class="contact-item">
+                <div class="about-container">
 
-                            <div class="contact-icon">
+                    <div class="about-image">
 
-                                <i
-                                    class="fas fa-envelope"
-                                    aria-hidden="true">
-                                </i>
+                        <div class="about-card">
+
+                            <i class="fas fa-user-tie"></i>
+
+                            <h3>
+                                Computer Science Graduate
+                            </h3>
+
+                            <p>
+                                B.Sc Computer Science
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-content">
+
+                        <h3>
+                            Passionate About Building for the Web
+                        </h3>
+
+                        <p>
+                            I am Varalakshmi K, a B.Sc Computer Science graduate
+                            with a strong interest in web development and
+                            software technologies.
+                        </p>
+
+                        <p>
+                            I enjoy designing responsive interfaces,
+                            developing practical web applications and
+                            continuously improving my technical skills.
+                        </p>
+
+                        <p>
+                            My goal is to begin my professional career in the
+                            IT industry and contribute to real-world projects
+                            while growing as a developer.
+                        </p>
+
+
+                        <div class="about-details">
+
+                            <div class="detail-item">
+
+                                <i class="fas fa-graduation-cap"></i>
+
+                                <div>
+                                    <strong>Degree</strong>
+                                    <span>B.Sc Computer Science</span>
+                                </div>
 
                             </div>
 
-                            <div>
 
-                                <h4>
-                                    Email
-                                </h4>
+                            <div class="detail-item">
 
-                                <a href="mailto:vara24000@gmail.com">
-                                    vara24000@gmail.com
+                                <i class="fas fa-location-dot"></i>
+
+                                <div>
+                                    <strong>Location</strong>
+                                    <span>Tamil Nadu, India</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="detail-item">
+
+                                <i class="fas fa-code"></i>
+
+                                <div>
+                                    <strong>Focus</strong>
+                                    <span>Web Development</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <a href="Resume.pdf"
+                           class="btn primary-btn"
+                           target="_blank">
+                            <i class="fas fa-file-pdf"></i>
+                            View Resume
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+        <section id="skills" class="skills-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p>
+                        My Technical Skills
+                    </p>
+
+                    <h2>
+                        What I <span>Know</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="skills-container">
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+
+                        <h3>
+                            HTML
+                        </h3>
+
+                        <p>
+                            Semantic and structured web pages.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+
+                        <h3>
+                            CSS
+                        </h3>
+
+                        <p>
+                            Responsive layouts and modern UI styling.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Interactive and dynamic web functionality.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+
+                        <h3>
+                            PHP
+                        </h3>
+
+                        <p>
+                            Server-side web development.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+
+                        <h3>
+                            MySQL
+                        </h3>
+
+                        <p>
+                            Database design and data management.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+
+                        <h3>
+                            ASP.NET
+                        </h3>
+
+                        <p>
+                            Web development using C# and Web Forms.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+
+                        <h3>
+                            MS Excel
+                        </h3>
+
+                        <p>
+                            Data handling and spreadsheet operations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+
+                        <h3>
+                            MS Word
+                        </h3>
+
+                        <p>
+                            Professional documentation and formatting.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+        <section id="projects" class="projects-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p>
+                        My Recent Work
+                    </p>
+
+                    <h2>
+                        Featured <span>Projects</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="projects-container">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img src="img/project1.png"
+                                 alt="Departmental Management System"
+                                 loading="lazy">
+
+                            <div class="project-overlay">
+                                <i class="fas fa-building"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <span class="project-number">
+                                Project 01
+                            </span>
+
+                            <h3>
+                                Departmental Management System
+                            </h3>
+
+                            <p>
+                                A student management dashboard designed for
+                                the Computer Science department to manage
+                                student data, reports, staff information,
+                                department details and library resources.
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#contact">
+                                    <i class="fas fa-arrow-right"></i>
+                                    Project Details
                                 </a>
 
                             </div>
 
                         </div>
 
+                    </article>
 
-                        <!-- Location -->
 
-                        <div class="contact-item">
+                    <!-- PROJECT 2 -->
 
-                            <div class="contact-icon">
+                    <article class="project-card">
 
-                                <i
-                                    class="fas fa-location-dot"
-                                    aria-hidden="true">
-                                </i>
+                        <div class="project-image">
 
-                            </div>
+                            <img src="img/PROJECT3.png"
+                                 alt="Personal Portfolio Website"
+                                 loading="lazy">
 
-                            <div>
-
-                                <h4>
-                                    Location
-                                </h4>
-
-                                <p>
-                                    Tamil Nadu, India
-                                </p>
-
+                            <div class="project-overlay">
+                                <i class="fas fa-laptop-code"></i>
                             </div>
 
                         </div>
 
 
-                        <!-- Role -->
+                        <div class="project-content">
 
-                        <div class="contact-item">
+                            <span class="project-number">
+                                Project 02
+                            </span>
 
-                            <div class="contact-icon">
+                            <h3>
+                                Personal Portfolio Website
+                            </h3>
 
-                                <i
-                                    class="fas fa-code"
-                                    aria-hidden="true">
-                                </i>
+                            <p>
+                                A responsive personal portfolio website
+                                created to showcase my skills, projects,
+                                education, resume and professional profile.
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>GitHub Pages</span>
 
                             </div>
 
-                            <div>
 
-                                <h4>
-                                    Role
-                                </h4>
+                            <div class="project-links">
 
-                                <p>
-                                    Aspiring Full Stack Developer
-                                </p>
+                                <a href="#contact">
+                                    <i class="fas fa-arrow-right"></i>
+                                    Contact Me
+                                </a>
 
                             </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EDUCATION
+        ========================== -->
+        <section id="education" class="education-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p>
+                        My Academic Journey
+                    </p>
+
+                    <h2>
+                        <span>Education</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <span>
+                                Undergraduate
+                            </span>
+
+                            <h3>
+                                B.Sc Computer Science
+                            </h3>
+
+                            <h4>
+                                Thiru.A. Govindasamy Government Arts College
+                            </h4>
+
+                            <p>
+                                Completed Bachelor of Science in Computer
+                                Science with a strong foundation in
+                                programming, web development and computer
+                                applications.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <span>
+                                Higher Secondary
+                            </span>
+
+                            <h3>
+                                Higher Secondary Education
+                            </h3>
+
+                            <h4>
+                                GHSS Andampallam
+                            </h4>
+
+                            <p>
+                                Completed higher secondary education with
+                                interest in computer science and technology.
+                            </p>
 
                         </div>
 
@@ -737,191 +691,229 @@
 
                 </div>
 
+            </div>
 
-               <!-- Contact Form -->
-
-<form
-    class="contact-form"
-    id="contactForm"
-    action="contact.php"
-    method="POST">
-
-    <div class="input-group">
-
-        <label for="name">
-            Your Name
-        </label>
-
-        <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            autocomplete="name"
-            required>
-
-    </div>
+        </section>
 
 
-    <div class="input-group">
+        <!-- =========================
+             CONTACT
+        ========================== -->
+        <section id="contact" class="contact-section">
 
-        <label for="email">
-            Your Email
-        </label>
+            <div class="container">
 
-        <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            autocomplete="email"
-            required>
+                <div class="section-heading">
 
-    </div>
+                    <p>
+                        Let's Connect
+                    </p>
 
+                    <h2>
+                        Contact <span>Me</span>
+                    </h2>
 
-    <div class="input-group">
-
-        <label for="message">
-            Your Message
-        </label>
-
-        <textarea
-            id="message"
-            name="message"
-            placeholder="Write your message..."
-            rows="6"
-            required></textarea>
-
-    </div>
+                </div>
 
 
-    <button
-        type="submit"
-        class="send-btn"
-        id="sendMessageBtn">
-
-        <i
-            class="fas fa-paper-plane"
-            aria-hidden="true">
-        </i>
-
-        Send Message
-
-    </button>
+                <div class="contact-container">
 
 
-    <div
-        class="form-status"
-        id="formStatus"
-        role="status"
-        aria-live="polite">
-    </div>
+                    <div class="contact-info">
 
-</form>
+                        <h3>
+                            Let's Work Together
+                        </h3>
+
+                        <p>
+                            Have a project, job opportunity or simply want
+                            to connect? Feel free to send me a message.
+                        </p>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+
+                            <div>
+                                <h4>Email</h4>
+                                <p>
+                                    Available through contact form
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+
+                            <div>
+                                <h4>Location</h4>
+                                <p>
+                                    Tamil Nadu, India
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+
+                            <div>
+                                <h4>Profession</h4>
+                                <p>
+                                    Full Stack Developer
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT FORM -->
+
+                    <div class="contact-form-container">
+
+                        <form class="contact-form"
+                              id="contactForm"
+                              action="https://varalakshmi-dev.free.nf/contact.php"
+                              method="POST">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Your Name
+                                </label>
+
+                                <input type="text"
+                                       id="name"
+                                       name="name"
+                                       placeholder="Enter your name"
+                                       autocomplete="name"
+                                       required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Your Email
+                                </label>
+
+                                <input type="email"
+                                       id="email"
+                                       name="email"
+                                       placeholder="Enter your email"
+                                       autocomplete="email"
+                                       required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="message">
+                                    Your Message
+                                </label>
+
+                                <textarea id="message"
+                                          name="message"
+                                          rows="6"
+                                          placeholder="Write your message..."
+                                          required></textarea>
+
+                            </div>
+
+
+                            <div class="form-status"
+                                 id="formStatus"
+                                 role="status"
+                                 aria-live="polite">
+                            </div>
+
+
+                            <button type="submit"
+                                    class="btn primary-btn"
+                                    id="sendMessageBtn">
+
+                                <i class="fas fa-paper-plane"></i>
+
+                                Send Message
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
 
-    <footer>
+        <div class="container">
 
-        <div class="footer-content">
+            <div class="footer-content">
 
-            <h3 class="footer-logo">
-                Varalakshmi<span>.</span>
-            </h3>
+                <div class="footer-logo">
+                    Varalakshmi<span>K</span>
+                </div>
 
-            <p>
-                Aspiring Full Stack Developer |
-                B.Sc. Computer Science Graduate
-            </p>
-
-
-            <div class="social-links">
-
-                <!-- LinkedIn -->
-
-                <a
-                    href="https://www.linkedin.com/in/vara24/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn">
-
-                    <i
-                        class="fab fa-linkedin-in"
-                        aria-hidden="true">
-                    </i>
-
-                </a>
+                <p>
+                    © 2026 Varalakshmi K. All Rights Reserved.
+                </p>
 
 
-                <!-- GitHub -->
+                <div class="footer-social">
 
-                <a
-                    href="https://github.com/vara2006-dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub">
+                    <a href="https://github.com/vara2006-dev"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
 
-                    <i
-                        class="fab fa-github"
-                        aria-hidden="true">
-                    </i>
+                    <a href="https://www.linkedin.com/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
 
-                </a>
-
-
-                <!-- Instagram -->
-
-                <a
-                    href="https://www.instagram.com/_codes.creation_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram">
-
-                    <i
-                        class="fab fa-instagram"
-                        aria-hidden="true">
-                    </i>
-
-                </a>
-
-
-                <!-- Email -->
-
-                <a
-                    href="mailto:vara24000@gmail.com"
-                    aria-label="Send email">
-
-                    <i
-                        class="fas fa-envelope"
-                        aria-hidden="true">
-                    </i>
-
-                </a>
+                </div>
 
             </div>
-
-
-            <div class="footer-line"></div>
-
-
-            <p class="copyright">
-                © 2026 Varalakshmi K. All Rights Reserved.
-            </p>
 
         </div>
 
     </footer>
 
 
-    <!-- JavaScript -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
     <script src="script.js"></script>
 
 </body>
-
 </html>

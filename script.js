@@ -1,380 +1,756 @@
-// ===============================
-// PORTFOLIO SCRIPT
-// ===============================
+/* =========================================================
+   VARALAKSHMI K - PORTFOLIO SCRIPT
+   FULL UPDATED VERSION
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // ===============================
-    // MOBILE MENU
-    // ===============================
+    /* =====================================================
+       TYPING EFFECT
+    ===================================================== */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+    const typing = document.getElementById("typing");
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-            menuToggle.classList.toggle("active");
-        });
+    const texts = [
+        "Aspiring Full Stack Developer",
+        "Web Developer",
+        "B.Sc. Computer Science Graduate",
+        "Frontend Developer"
+    ];
 
-        document.querySelectorAll(".nav-menu a").forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-                menuToggle.classList.remove("active");
-            });
-        });
-    }
+    let textIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
+    function typeEffect() {
 
-    // ===============================
-    // SMOOTH SCROLL
-    // ===============================
+        if (!typing) return;
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
+        const currentText = texts[textIndex];
 
-            const targetId = this.getAttribute("href");
+        if (!deleting) {
 
-            if (!targetId || targetId === "#") return;
+            typing.textContent =
+                currentText.substring(0, charIndex + 1);
 
-            const target = document.querySelector(targetId);
+            charIndex++;
 
-            if (target) {
-                e.preventDefault();
+            if (charIndex >= currentText.length) {
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        });
-    });
+                deleting = true;
 
-
-    // ===============================
-    // ACTIVE NAV LINK
-    // ===============================
-
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".nav-menu a");
-
-    window.addEventListener("scroll", () => {
-
-        let currentSection = "";
-
-        sections.forEach(section => {
-
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
-            ) {
-                currentSection = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            const href = link.getAttribute("href");
-
-            if (href === `#${currentSection}`) {
-                link.classList.add("active");
-            }
-        });
-    });
-
-
-    // ===============================
-    // CONTACT FORM
-    // ===============================
-
-    const contactForm = document.getElementById("contactForm");
-    const sendButton = document.getElementById("sendMessageBtn");
-
-    // IMPORTANT:
-    // Your HTML should use:
-    // <div id="formMessage" class="form-message"></div>
-
-    const formMessage = document.getElementById("formMessage");
-
-    if (contactForm) {
-
-        contactForm.addEventListener("submit", async function (e) {
-
-            e.preventDefault();
-
-            // -------------------------------
-            // CHECK ELEMENTS
-            // -------------------------------
-
-            if (!formMessage) {
-                console.error("formMessage element not found.");
-                return;
-            }
-
-            // -------------------------------
-            // GET FORM VALUES
-            // -------------------------------
-
-            const nameInput = document.getElementById("name");
-            const emailInput = document.getElementById("email");
-            const messageInput = document.getElementById("message");
-
-            const name = nameInput ? nameInput.value.trim() : "";
-            const email = emailInput ? emailInput.value.trim() : "";
-            const message = messageInput ? messageInput.value.trim() : "";
-
-            // -------------------------------
-            // BASIC VALIDATION
-            // -------------------------------
-
-            if (!name || !email || !message) {
-
-                formMessage.textContent =
-                    "Please fill in all fields.";
-
-                formMessage.className =
-                    "form-message error";
+                setTimeout(typeEffect, 1500);
 
                 return;
             }
 
-            // -------------------------------
-            // EMAIL VALIDATION
-            // -------------------------------
+        } else {
 
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            typing.textContent =
+                currentText.substring(0, charIndex - 1);
 
-            if (!emailPattern.test(email)) {
+            charIndex--;
 
-                formMessage.textContent =
-                    "Please enter a valid email address.";
+            if (charIndex <= 0) {
 
-                formMessage.className =
-                    "form-message error";
+                charIndex = 0;
+                deleting = false;
 
-                return;
+                textIndex =
+                    (textIndex + 1) % texts.length;
             }
+        }
 
-            // -------------------------------
-            // SHOW SENDING
-            // -------------------------------
-
-            if (sendButton) {
-                sendButton.disabled = true;
-                sendButton.dataset.originalText =
-                    sendButton.innerHTML;
-
-                sendButton.innerHTML =
-                    '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            }
-
-            formMessage.textContent =
-                "Sending your message...";
-
-            formMessage.className =
-                "form-message sending";
-
-
-            // -------------------------------
-            // CREATE FORM DATA
-            // -------------------------------
-
-            const formData = new FormData(contactForm);
-
-
-            // -------------------------------
-            // SEND TO INFINITYFREE PHP
-            // -------------------------------
-
-            try {
-
-                const response = await fetch(
-                    "https://varalakshmi-dev.free.nf/contact.php",
-                    {
-                        method: "POST",
-
-                        body: formData,
-
-                        headers: {
-                            "Accept": "application/json"
-                        }
-                    }
-                );
-
-
-                // -------------------------------
-                // CHECK HTTP RESPONSE
-                // -------------------------------
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        `Server returned ${response.status}`
-                    );
-                }
-
-
-                // -------------------------------
-                // READ JSON RESPONSE
-                // -------------------------------
-
-                const data = await response.json();
-
-
-                // -------------------------------
-                // SUCCESS
-                // -------------------------------
-
-                if (data.success === true) {
-
-                    formMessage.textContent =
-                        data.message ||
-                        "Message sent successfully!";
-
-                    formMessage.className =
-                        "form-message success";
-
-                    contactForm.reset();
-
-                }
-
-                // -------------------------------
-                // PHP ERROR
-                // -------------------------------
-
-                else {
-
-                    formMessage.textContent =
-                        data.message ||
-                        "Unable to send your message.";
-
-                    formMessage.className =
-                        "form-message error";
-                }
-
-
-            } catch (error) {
-
-                console.error(
-                    "Contact form error:",
-                    error
-                );
-
-                formMessage.textContent =
-                    "Unable to send your message. Please try again.";
-
-                formMessage.className =
-                    "form-message error";
-
-            }
-
-
-            // -------------------------------
-            // RESTORE BUTTON
-            // -------------------------------
-
-            if (sendButton) {
-
-                sendButton.disabled = false;
-
-                sendButton.innerHTML =
-                    sendButton.dataset.originalText ||
-                    "Send Message";
-            }
-
-        });
-    }
-
-
-    // ===============================
-    // SCROLL REVEAL ANIMATION
-    // ===============================
-
-    const revealElements =
-        document.querySelectorAll(
-            ".project-card, .skill-card, .about-card, .contact-card"
+        setTimeout(
+            typeEffect,
+            deleting ? 50 : 90
         );
+    }
+
+    typeEffect();
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const navLinks =
+        document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+            const icon =
+                menuToggle.querySelector("i");
+
+            if (!icon) return;
+
+            if (navLinks.classList.contains("active")) {
+
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+
+        });
+
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navLinks.classList.remove("active");
+
+                    const icon =
+                        menuToggle.querySelector("i");
+
+                    if (!icon) return;
+
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
+
+                });
+
+            });
+    }
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const hiddenElements =
+        document.querySelectorAll(".hidden");
 
     if ("IntersectionObserver" in window) {
 
-        const observer =
+        const revealObserver =
             new IntersectionObserver(
-                (entries, observer) => {
+                function (entries) {
 
-                    entries.forEach(entry => {
+                    entries.forEach(function (entry) {
 
                         if (entry.isIntersecting) {
 
                             entry.target.classList.add("show");
 
-                            observer.unobserve(
+                            revealObserver.unobserve(
                                 entry.target
                             );
                         }
+
                     });
 
                 },
                 {
-                    threshold: 0.15
+                    threshold: 0.12
                 }
             );
 
-        revealElements.forEach(element => {
-            observer.observe(element);
+
+        hiddenElements.forEach(function (element) {
+
+            revealObserver.observe(element);
+
+        });
+
+    } else {
+
+        hiddenElements.forEach(function (element) {
+
+            element.classList.add("show");
+
         });
     }
 
 
-    // ===============================
-    // TYPING EFFECT
-    // ===============================
+    /* =====================================================
+       SMOOTH SCROLL
+    ===================================================== */
 
-    const typingElement =
-        document.querySelector(".typing-text");
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function (link) {
 
-    if (typingElement) {
+            link.addEventListener("click", function (event) {
 
-        const text =
-            typingElement.dataset.text ||
-            typingElement.textContent.trim();
+                const targetId =
+                    this.getAttribute("href");
 
-        typingElement.textContent = "";
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
 
-        let index = 0;
+                const target =
+                    document.querySelector(targetId);
 
-        function typeText() {
+                if (!target) return;
 
-            if (index < text.length) {
+                event.preventDefault();
 
-                typingElement.textContent +=
-                    text.charAt(index);
+                const navbar =
+                    document.querySelector(".navbar");
 
-                index++;
+                const navbarHeight =
+                    navbar
+                        ? navbar.offsetHeight + 25
+                        : 80;
 
-                setTimeout(typeText, 80);
+                const position =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    navbarHeight;
+
+                window.scrollTo({
+                    top: position,
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ===================================================== */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+    const navigationLinks =
+        document.querySelectorAll(".nav-links a");
+
+    function updateActiveLink() {
+
+        let current = "";
+
+        sections.forEach(function (section) {
+
+            const sectionTop =
+                section.offsetTop - 180;
+
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom
+            ) {
+
+                current =
+                    section.getAttribute("id");
             }
+
+        });
+
+
+        navigationLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            if (
+                current &&
+                link.getAttribute("href") ===
+                "#" + current
+            ) {
+
+                link.classList.add("active");
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveLink,
+        { passive: true }
+    );
+
+    updateActiveLink();
+
+
+    /* =====================================================
+       CONTACT FORM
+    ===================================================== */
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                /* =============================================
+                   GET FORM ELEMENTS
+                ============================================= */
+
+                const nameInput =
+                    document.getElementById("name");
+
+                const emailInput =
+                    document.getElementById("email");
+
+                const messageInput =
+                    document.getElementById("message");
+
+                const formMessage =
+                    document.getElementById("formMessage");
+
+                const sendButton =
+                    contactForm.querySelector(".send-btn");
+
+
+                /* =============================================
+                   GET VALUES
+                ============================================= */
+
+                const name =
+                    nameInput
+                        ? nameInput.value.trim()
+                        : "";
+
+                const email =
+                    emailInput
+                        ? emailInput.value.trim()
+                        : "";
+
+                const message =
+                    messageInput
+                        ? messageInput.value.trim()
+                        : "";
+
+
+                /* =============================================
+                   CLEAR OLD MESSAGE
+                ============================================= */
+
+                clearFormMessage();
+
+
+                /* =============================================
+                   VALIDATION
+                ============================================= */
+
+                if (
+                    name === "" ||
+                    email === "" ||
+                    message === ""
+                ) {
+
+                    showFormMessage(
+                        "Please fill in all fields.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                /* =============================================
+                   EMAIL VALIDATION
+                ============================================= */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email)) {
+
+                    showFormMessage(
+                        "Please enter a valid email address.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                /* =============================================
+                   LENGTH VALIDATION
+                ============================================= */
+
+                if (name.length > 100) {
+
+                    showFormMessage(
+                        "Name is too long.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                if (email.length > 150) {
+
+                    showFormMessage(
+                        "Email address is too long.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                if (message.length > 5000) {
+
+                    showFormMessage(
+                        "Message is too long.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                /* =============================================
+                   SENDING MESSAGE
+                ============================================= */
+
+                showFormMessage(
+                    "Sending your message...",
+                    "sending"
+                );
+
+
+                /* =============================================
+                   DISABLE BUTTON
+                ============================================= */
+
+                if (sendButton) {
+
+                    sendButton.disabled = true;
+
+                    sendButton.innerHTML =
+                        '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                }
+
+
+                /* =============================================
+                   CREATE FORM DATA
+                ============================================= */
+
+                const formData =
+                    new FormData();
+
+                formData.append(
+                    "name",
+                    name
+                );
+
+                formData.append(
+                    "email",
+                    email
+                );
+
+                formData.append(
+                    "message",
+                    message
+                );
+
+
+                /* =============================================
+                   SEND TO PHP
+                ============================================= */
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "contact.php",
+                            {
+                                method: "POST",
+                                body: formData,
+
+                                headers: {
+                                    "Accept":
+                                        "application/json"
+                                }
+                            }
+                        );
+
+
+                    /* =============================================
+                       CHECK HTTP STATUS
+                    ============================================= */
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "HTTP Error: " +
+                            response.status
+                        );
+                    }
+
+
+                    /* =============================================
+                       GET PHP RESPONSE
+                    ============================================= */
+
+                    const responseText =
+                        await response.text();
+
+                    console.log(
+                        "PHP Response:",
+                        responseText
+                    );
+
+
+                    /* =============================================
+                       PARSE JSON
+                    ============================================= */
+
+                    let data;
+
+                    try {
+
+                        data =
+                            JSON.parse(responseText);
+
+                    } catch (jsonError) {
+
+                        console.error(
+                            "JSON Parse Error:",
+                            jsonError
+                        );
+
+                        console.error(
+                            "PHP Response:",
+                            responseText
+                        );
+
+                        throw new Error(
+                            "Invalid response from PHP."
+                        );
+                    }
+
+
+                    /* =============================================
+                       SUCCESS
+                    ============================================= */
+
+                    if (data.success === true) {
+
+                        /*
+                         * IMPORTANT:
+                         * Show success message FIRST.
+                         */
+
+                        showFormMessage(
+                            "✓ Thank you! Your message has been sent successfully.",
+                            "success"
+                        );
+
+
+                        /*
+                         * Clear form AFTER successful sending.
+                         */
+
+                        contactForm.reset();
+
+
+                        /*
+                         * Change button
+                         */
+
+                        if (sendButton) {
+
+                            sendButton.disabled = true;
+
+                            sendButton.innerHTML =
+                                '<i class="fas fa-check"></i> Message Sent';
+                        }
+
+
+                        /*
+                         * Keep success message visible
+                         * for 5 seconds.
+                         */
+
+                        setTimeout(function () {
+
+                            clearFormMessage();
+
+                            if (sendButton) {
+
+                                sendButton.disabled = false;
+
+                                sendButton.innerHTML =
+                                    '<i class="fas fa-paper-plane"></i> Send Message';
+                            }
+
+                        }, 5000);
+
+
+                    } else {
+
+                        /* =========================================
+                           PHP RETURNED ERROR
+                        ========================================= */
+
+                        showFormMessage(
+                            data.message ||
+                            "Unable to send your message. Please try again.",
+                            "error"
+                        );
+
+
+                        if (sendButton) {
+
+                            sendButton.disabled = false;
+
+                            sendButton.innerHTML =
+                                '<i class="fas fa-paper-plane"></i> Send Message';
+                        }
+                    }
+
+
+                } catch (error) {
+
+                    /* =============================================
+                       CONNECTION / SERVER ERROR
+                    ============================================= */
+
+                    console.error(
+                        "Contact Form Error:",
+                        error
+                    );
+
+
+                    showFormMessage(
+                        "Unable to connect to the server. Please make sure Apache and PHP are running.",
+                        "error"
+                    );
+
+
+                    if (sendButton) {
+
+                        sendButton.disabled = false;
+
+                        sendButton.innerHTML =
+                            '<i class="fas fa-paper-plane"></i> Send Message';
+                    }
+
+                }
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       SHOW FORM MESSAGE
+    ===================================================== */
+
+    function showFormMessage(message, type) {
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+        if (!formMessage) return;
+
+
+        formMessage.textContent =
+            message;
+
+
+        formMessage.className =
+            "form-message " + type;
+
+
+        /*
+         * Make absolutely sure it is visible.
+         */
+
+        formMessage.style.display =
+            "block";
+
+
+        /*
+         * Scroll slightly so visitor can see
+         * the success message on small screens.
+         */
+
+        if (type === "success") {
+
+            setTimeout(function () {
+
+                formMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+
+            }, 100);
         }
-
-        typeText();
     }
 
 
-    // ===============================
-    // CURRENT YEAR
-    // ===============================
+    /* =====================================================
+       CLEAR FORM MESSAGE
+    ===================================================== */
 
-    const yearElement =
-        document.getElementById("currentYear");
+    function clearFormMessage() {
 
-    if (yearElement) {
-        yearElement.textContent =
-            new Date().getFullYear();
+        const formMessage =
+            document.getElementById("formMessage");
+
+        if (!formMessage) return;
+
+
+        formMessage.textContent = "";
+
+        formMessage.className =
+            "form-message";
+
+        formMessage.style.display =
+            "none";
     }
+
+
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
+
+    const copyright =
+        document.querySelector(".copyright");
+
+    if (copyright) {
+
+        copyright.textContent =
+            "© " +
+            new Date().getFullYear() +
+            " Varalakshmi K. All Rights Reserved.";
+    }
+
+
+    /* =====================================================
+       PAGE LOADED
+    ===================================================== */
+
+    document.body.classList.add(
+        "page-loaded"
+    );
 
 });

@@ -309,16 +309,10 @@
 
                     <!-- Resume -->
 
-                    <a
-                        href="/Resume.pdf"
-                        download
-                        class="resume-btn">
-
-                        <i class="fas fa-download" aria-hidden="true"></i>
-
-                        Download Resume
-
-                    </a>
+                   <a href="Resume.pdf" download class="resume-btn">
+    <i class="fas fa-download"></i>
+    Download Resume
+</a>
 
                 </div>
 
@@ -511,6 +505,11 @@
 
                     <div class="project-image">
 
+                        <img
+                            src="img/project1.png"
+                            alt="Departmental Management System"
+                            loading="lazy">
+
                         <div
                             class="project-overlay"
                             aria-hidden="true">
@@ -562,7 +561,7 @@
                     <div class="project-image">
 
                         <img
-                            src="img/project3.png"
+                            src="img/PROJECT3.png"
                             alt="Personal Portfolio Website"
                             loading="lazy">
 
@@ -739,89 +738,87 @@
                 </div>
 
 
-                <!-- Contact Form -->
+               <!-- Contact Form -->
 
-                <form
-                    class="contact-form"
-                    id="contactForm"
-                    action="https://varalakshmi-dev.free.nf/contact.php"
-                    method="POST">
+<form
+    class="contact-form"
+    id="contactForm"
+    action="contact.php"
+    method="POST">
 
-                    <div class="input-group">
+    <div class="input-group">
 
-                        <label for="name">
-                            Your Name
-                        </label>
+        <label for="name">
+            Your Name
+        </label>
 
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your name"
-                            autocomplete="name"
-                            required>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            autocomplete="name"
+            required>
 
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="email">
-                            Your Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            autocomplete="email"
-                            required>
-
-                    </div>
+    </div>
 
 
-                    <div class="input-group">
+    <div class="input-group">
 
-                        <label for="message">
-                            Your Message
-                        </label>
+        <label for="email">
+            Your Email
+        </label>
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Write your message..."
-                            rows="6"
-                            required></textarea>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required>
 
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="send-btn"
-                        id="sendMessageBtn">
-
-                        <i
-                            class="fas fa-paper-plane"
-                            aria-hidden="true">
-                        </i>
-
-                        Send Message
-
-                    </button>
+    </div>
 
 
-                    <div
-                        class="form-status"
-                        id="formStatus"
-                        role="status"
-                        aria-live="polite">
-                    </div>
+    <div class="input-group">
 
-                </form>
+        <label for="message">
+            Your Message
+        </label>
 
-            </div>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message..."
+            rows="6"
+            required></textarea>
+
+    </div>
+
+
+    <button
+        type="submit"
+        class="send-btn"
+        id="sendMessageBtn">
+
+        <i
+            class="fas fa-paper-plane"
+            aria-hidden="true">
+        </i>
+
+        Send Message
+
+    </button>
+
+
+    <div
+        class="form-status"
+        id="formStatus"
+        role="status"
+        aria-live="polite">
+    </div>
+
+</form>
 
         </section>
 
@@ -923,7 +920,6 @@
 
 
     <!-- JavaScript -->
-
     <script src="script.js"></script>
 
 </body>
